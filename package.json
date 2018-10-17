@@ -1,13 +1,29 @@
 {
-  "name": "vue-marquee",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-marquee-lite",
+  "version": "0.1.5",
+  "author": "powerQ",
   "scripts": {
     "serve": "vue-cli-service serve",
+    "start": "npm run serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name vue-marquee-lite --dest lib src/packages/marquee.js"
+  },
+  "main": "lib/vue-marquee-lite.umd.min.js",
+  "keywords": [
+    "vue",
+    "marquee"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ql9075/vue-marquee-lite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ql9075/vue-marquee-lite/issues"
   },
   "dependencies": {
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
@@ -26,7 +42,9 @@
       "plugin:vue/essential",
       "@vue/airbnb"
     ],
-    "rules": {},
+    "rules": {
+      "max-len": 0
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

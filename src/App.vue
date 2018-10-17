@@ -1,18 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <vue-marquee-lite
+      className="paomadeng"
+      :data="list"
+      :space="0"
+      />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Vue from 'vue';
+import Marquee from './packages/marquee';
 
+Vue.use(Marquee);
 export default {
   name: 'app',
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      list: ['aaaaaaaaaaaaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbbb', 'cccccccccccccc'],
+    };
   },
+  // components: {
+  //   Marquee,
+  // },
 };
 </script>
 
