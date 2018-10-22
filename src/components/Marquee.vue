@@ -46,7 +46,11 @@ export default {
     },
     space: {
       type: Number,
-      default: 60,
+      default: 0,
+    },
+    type: {
+      type: String,
+      default: 'transform',
     },
   },
   watch: {
@@ -63,7 +67,11 @@ export default {
     setStyle($el, left) {
       const el = $el;
       if (el && el.style) {
-        el.style.transform = `translate3d(${left}px,0,0)`;
+        if (this.type === 'position') {
+          el.style.left = `${left}px`;
+        } else {
+          el.style.transform = `translate3d(${left}px,0,0)`;
+        }
       }
     },
     startFn(num) {

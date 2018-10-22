@@ -2,8 +2,8 @@
   <div id="app">
     <vue-marquee-lite
       className="paomadeng"
+      type="position"
       :data="list"
-      :space="0"
       />
   </div>
 </template>
